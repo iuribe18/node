@@ -9,13 +9,13 @@ env:
   MONGODB_DB_NAME: uribe-demo
 jobs:
   test:
+    environment: testing
     # You can also define variables on job level
     env:
       MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
